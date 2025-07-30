@@ -1,6 +1,28 @@
 from utils.corefiles import readJson
 from typing import List, Dict
 import utils.screencontrollers as sc
+from tabulate import tabulate
+
+
+def mostrar_resultados(resultados: List[Dict]):
+    headers = ["Tipo", "Categoría", "ID", "Nombre", "Detalles"]
+    table = []
+
+    for r in resultados:
+        elemento = r["elemento"]
+        nombre = elemento.get("nombre", "N/A")
+        detalles = {k: v for k, v in elemento.items() if k != "nombre"}
+        table.append([
+            r["tipo"].capitalize(),
+            r["categoria"].capitalize(),
+            r["id"],
+            nombre,
+            str(detalles)
+        ])
+
+    print(tabulate(table, headers=headers, tablefmt="grid"))
+    sc.pausar()
+
 
 def buscar_por_titulo() -> List[Dict]:
     sc.limpiar_pantalla()
@@ -25,9 +47,7 @@ def buscar_por_titulo() -> List[Dict]:
                             })
 
     if resultados:
-        for r in resultados:
-            print(f"[{r['tipo'].upper()} - {r['categoria']}] ID: {r['id']} -> {r['elemento']}")
-            sc.pausar()
+        mostrar_resultados(resultados)
     else:
         print("No se encontraron resultados.")
         sc.pausar()
@@ -61,9 +81,7 @@ def buscar_por_autor() -> List[Dict]:
                                 break
 
     if resultados:
-        for r in resultados:
-            print(f"[{r['tipo'].upper()} - {r['categoria']}] ID: {r['id']} -> {r['elemento']}")
-            sc.pausar()
+        mostrar_resultados(resultados)
     else:
         print("No se encontraron resultados.")
         sc.pausar()
@@ -94,12 +112,12 @@ def buscar_por_genero() -> List[Dict]:
                             })
 
     if resultados:
-        for r in resultados:
-            print(f"[{r['tipo'].upper()} - {r['categoria']}] ID: {r['id']} -> {r['elemento']}")
-            sc.pausar()
+        mostrar_resultados(resultados)
     else:
         print("No se encontraron resultados.")
         sc.pausar()
 
     return resultados
+
+   
 

@@ -1,10 +1,16 @@
 {
     "libros": {
         "5339": {
-            "nombre": "",
-            "autor": "vale",
+            "nombre": "vlae",
+            "autor": "pepe",
             "genero": "chao",
             "calificacion": 10
+        },
+        "6737": {
+            "nombre": "huhu",
+            "autor": "koko",
+            "genero": "juju",
+            "calificacion": 2
         }
     }
 }

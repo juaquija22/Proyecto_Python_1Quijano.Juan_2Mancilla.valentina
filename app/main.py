@@ -7,6 +7,7 @@ Descripción: este proyecto consiste en una liga betplay donde se pueden hacer t
 import os
 import sys
 
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import utils.screencontrollers as sc
@@ -19,57 +20,47 @@ import controllers.menu as mn
 def main_menu():
     while True:
         sc.limpiar_pantalla()
-        print ('========================================')
-        print ('Administrador de Colección')
-        print('===========================================')
+        print('========================================')
+        print('Administrador de Colección')
+        print('========================================')
         print('1. Añadir un Nuevo Elemento')
         print('2. Ver Todos los Elementos')
         print('3. Buscar un Elemento')
         print('4. Editar un Elemento')
         print('5. Eliminar un Elemento')
         print('6. Ver Elementos por Categoría')
-        print('7. Guardar y Cargar Colección')
+        print('7. Guardar Colección')
         print('8. Salir')
-        print('===========================================')
-        print('selecciona una opción (1-8):')
+        print('========================================')
+
         try:
-            op=int(input("\n elige una opcion :"))
+            op = int(input("\nElige una opción (1-8): "))
             if 1 <= op <= 8:
                 return op
-        except:
-                pass
-        return None
+        except ValueError:
+            pass  
+
+        print("\nOpción no válida. Intenta nuevamente.")
+        sc.pausar()
+
 
 if __name__ == "__main__":
-        while True:
-                opcion = main_menu()
-                if opcion == 1:
-                      mn.main_menu_añadir()   
-                elif opcion == 2:
-                      mn.main_menu_ver_elementos()
-                     
-                elif opcion == 3:
-                      mn.main_menu_buscar()
-                      
-                       
-                elif opcion == 4:
-                      mn.main_menu_editar()
-                      
-                       
-                elif opcion == 5:
-                      mn.main_menu_eliminar_elementos()
-                                 
-                                            
-                elif opcion == 6:
-                       mn.main_menu_elementos_categoria()
-                         
-                       
-                      
-                elif opcion == 7:
-                      mn.main_menu_guardar_coleccion()
+    while True:
+        opcion = main_menu()
 
-                elif opcion == 8:
-                       break
-else:
-                print ('\n Opcion no valida')
-                sc.pausar()
+        if opcion == 1:
+            mn.main_menu_añadir()
+        elif opcion == 2:
+            mn.main_menu_ver_elementos()
+        elif opcion == 3:
+            mn.main_menu_buscar()
+        elif opcion == 4:
+            mn.main_menu_editar()
+        elif opcion == 5:
+            mn.main_menu_eliminar_elementos()
+        elif opcion == 6:
+            mn.main_menu_elementos_categoria()
+        elif opcion == 7:
+            mn.main_menu_guardar_coleccion()
+        elif opcion == 8:
+            break

@@ -1,5 +1,7 @@
 import utils.corefiles as cf
 import utils.screencontrollers as sc
+from tabulate import tabulate
+
 
 def listar_libros():
     sc.limpiar_pantalla()
@@ -11,17 +13,20 @@ def listar_libros():
         return
 
     print("=== Lista de Libros Registrados ===")
+    headers = ["ID", "Nombre", "Autor", "Género", "Calificación"]
+    table = []
+
     for idbk, info in datos["libros"].items():
-        print(f"\nID: {idbk}")
-        print(f"Nombre: {info['nombre']}")
-        print(f"Autor: {info['autor']}")
-        print(f"Género: {info['genero']}")
-        print(f"Calificación: {info['calificacion']}/10")
-    
+        table.append([
+            idbk,
+            info.get("nombre", "N/A"),
+            info.get("autor", "N/A"),
+            info.get("genero", "N/A"),
+            f"{info.get('calificacion', 0)}/10"
+        ])
+
+    print(tabulate(table, headers, tablefmt="grid"))
     sc.pausar()
-
-
-
 
 
 def listar_musica():
@@ -34,16 +39,20 @@ def listar_musica():
         return
 
     print("=== Lista de Canciones Registradas ===")
+    headers = ["ID", "Nombre", "Artista", "Género", "Calificación"]
+    table = []
+
     for idms, info in datos["musica"].items():
-        print(f"\nID: {idms}")
-        print(f"Nombre: {info['nombre']}")
-        print(f"Artista: {info['autor']}")
-        print(f"Género: {info['genero']}")
-        print(f"Calificación: {info['calificacion']}/10")
+        table.append([
+            idms,
+            info.get("nombre", "N/A"),
+            info.get("autor", "N/A"),
+            info.get("genero", "N/A"),
+            f"{info.get('calificacion', 0)}/10"
+        ])
 
+    print(tabulate(table, headers, tablefmt="grid"))
     sc.pausar()
-
-
 
 
 def listar_peliculas():
@@ -56,11 +65,19 @@ def listar_peliculas():
         return
 
     print("=== Lista de Películas Registradas ===")
+    headers = ["ID", "Nombre", "Director", "Género", "Calificación"]
+    table = []
+
     for idmv, info in datos["peliculas"].items():
-        print(f"\nID: {idmv}")
-        print(f"Nombre: {info['nombre']}")
-        print(f"Director: {info['autor']}")
-        print(f"Género: {info['genero']}")
-        print(f"Calificación: {info['calificacion']}/10")
-    
+        table.append([
+            idmv,
+            info.get("nombre", "N/A"),
+            info.get("autor", "N/A"),
+            info.get("genero", "N/A"),
+            f"{info.get('calificacion', 0)}/10"
+        ])
+
+    print(tabulate(table, headers, tablefmt="grid"))
     sc.pausar()
+
+  
