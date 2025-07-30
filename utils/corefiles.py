@@ -1,56 +1,60 @@
 import json
 import os
+from typing import Dict, List, Optional
 from config import DB_PATH
 
-def readJson(nombre):
-    ruta = os.path.join(DB_PATH, f"{nombre}.json")
-    if not os.path.exists(ruta):
+def readJson(filename: str) -> Dict:
+    path = os.path.join(DB_PATH, filename)
+    try:
+        with open(path, "r", encoding="utf-8") as cf:
+            return json.load(cf)
+    except (FileNotFoundError, json.JSONDecodeError):
         return {}
-    with open(ruta, "r", encoding="utf-8") as archivo:
-        try:
-            return json.load(archivo)
-        except json.JSONDecodeError:
-            return {}
 
-def writeJson(nombre, datos):
-    ruta = os.path.join(DB_PATH, f"{nombre}.json")
-    with open(ruta, "w", encoding="utf-8") as archivo:
-        json.dump(datos, archivo, indent=4, ensure_ascii=False)
+def writeJson(data: Dict, filename: str) -> None:
+    path = os.path.join(DB_PATH, filename)
+    with open(path, "w", encoding="utf-8") as cf:
+        json.dump(data, cf, indent=4)
 
-def updateJson(diccionario, claves):
-    for clave in claves:
-        ruta = os.path.join(DB_PATH, f"{clave}.json")
-        os.makedirs(DB_PATH, exist_ok=True)
+def updateJson(data: Dict, path_keys: Optional[List[str]] = None, filename: str = "libros.json") -> bool:
+    currentData = readJson(filename)
 
-        datos = readJson(clave)
-        if clave not in datos or not isinstance(datos[clave], dict):
-            datos[clave] = {}
+    if not path_keys:
+        currentData.update(data)
+    else:
+        current = currentData
+        for key in path_keys[:-1]:
+            current = current.setdefault(key, {})
+        current.setdefault(path_keys[-1], {}).update(data)
 
-        datos[clave].update(diccionario)
-        writeJson(clave, datos)
-        return False
+    writeJson(currentData, filename)
     return True
 
-def deleteJson(ruta):
-    datos = readJson(ruta[0])
-    actual = datos
-    for clave in ruta[1:-1]:
-        if clave not in actual:
+def deleteJson(path_keys: List[str], filename: str) -> bool:
+    data = readJson(filename)
+    if not data:
+        return False
+
+    current = data
+    for key in path_keys[:-1]:
+        if key not in current:
             return False
-        actual = actual[clave]
-    if ruta[-1] in actual:
-        del actual[ruta[-1]]
-        writeJson(ruta[0], datos)
+        current = current[key]
+
+    if path_keys[-1] in current:
+        del current[path_keys[-1]]
+        writeJson(data, filename)
         return True
     return False
 
-def initializeJson(estructura):
-    ruta = os.path.join(DB_PATH, "equipos.json")
-    if not os.path.exists(ruta):
-        writeJson("equipos", estructura)
+def initializeJson(initialStructure: Dict, filename: str) -> None:
+    path = os.path.join(DB_PATH, filename)
+    if not os.path.isfile(path):
+        writeJson(initialStructure, filename)
     else:
-        datos = readJson("equipos")
-        for k, v in estructura.items():
-            if k not in datos:
-                datos[k] = v
-        writeJson("equipos", datos)
+        currentData = readJson(filename)
+        for key, value in initialStructure.items():
+            if key not in currentData:
+                currentData[key] = value
+        writeJson(currentData, filename)
+

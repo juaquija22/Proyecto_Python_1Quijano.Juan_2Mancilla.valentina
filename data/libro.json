@@ -1,17 +1,21 @@
 {
-    "Libros": {
-        "8768": {
-            "nombre": "",
-            "Autor": "",
-            "Genero": "",
-            "Calificacion": ""
-        }
-    },
     "libro": {
-        "1828": {
-            "nombre": "d",
-            "autor": "d",
-            "genero": "d",
+        "1962": {
+            "nombre": "juan",
+            "autor": "juan",
+            "genero": "juan",
+            "calificacion": 4
+        },
+        "1574": {
+            "nombre": "ddd",
+            "autor": "dddd",
+            "genero": "dddd",
+            "calificacion": 6
+        },
+        "6927": {
+            "nombre": "ddd",
+            "autor": "ddd",
+            "genero": "dd",
             "calificacion": 3
         }
     }

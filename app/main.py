@@ -11,6 +11,8 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import utils.screencontrollers as sc
 import controllers.anadir as add
+import controllers.listar as ls
+
 
 def main_menu():
     while True:
@@ -40,10 +42,10 @@ if __name__ == "__main__":
         while True:
                 opcion = main_menu()
                 if opcion == 1:
-                      add.add_book()
-                       
-                       
+                 
+                      pass        
                 elif opcion == 2:
+                     
                        pass
                 elif opcion == 3:
                       pass
