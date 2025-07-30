@@ -77,7 +77,81 @@ def main_menu_ver_elementos():
         except ValueError:
             print('\nEntrada no válida. Por favor, ingresa un número.')
             sc.pausar
-            
+
+def main_menu_buscar():
+    while True:
+        sc.limpiar_pantalla()
+        print('===========================================')
+        print('        Buscar un Elemento')
+        print('===========================================')
+        print('¿Cómo deseas buscar?')
+        print('1. Buscar por Título')
+        print('2. Buscar por Autor/Director/Artista')
+        print('3. Buscar por Género')
+        print('4. Regresar al Menú Principal')
+        print('===========================================')
+
+        try:
+            op = int(input('\nSelecciona una opción (1-4): '))
+            if op == 1:
+                bs.buscar_por_titulo()
+                
+
+            elif op == 2:
+                bs.buscar_por_autor()
+
+            elif op == 3:
+                bs.buscar_por_genero()
+
+            elif op == 4:
+                print("\nRegresando al menú principal...")
+                break
+            else:
+                print('\nOpción no válida. Intenta de nuevo.')
+                sc.pausar()
+        except ValueError:
+            print("\nEntrada no válida. Por favor, introduce un número.")
+            sc.pausar()
+
+def main_menu_editar():
+    while True:
+        sc.limpiar_pantalla()
+        print('===========================================')
+        print('        Editar un Elemento')
+        print('===========================================')
+        print('¿Qué tipo de cambio deseas realizar?')
+        print('1. Editar Título')
+        print('2. Editar Autor/Director/Artista')
+        print('3. Editar Género')
+        print('4. Editar Valoración')
+        print('5. Regresar al Menú Principal')
+        print('===========================================')
+
+        try:
+            op = int(input('\nSelecciona una opción (1-5): '))
+            if op == 1:
+                ed.editar_titulo_por_nombre()
+                
+            elif op == 2:
+                ed.editar_autor_por_nombre()
+                
+            elif op == 3:
+                ed.editar_genero_por_nombre()
+                
+            elif op == 4:
+                ed.editar_calificacion_por_nombre()
+                
+            elif op == 5:
+                print("\nRegresando al menú principal...")
+                break
+            else:
+                print('\nOpción no válida. Intenta de nuevo.')
+                sc.pausar()
+        except ValueError:
+            print('\nEntrada inválida. Por favor, introduce un número.')
+            sc.pausar()
+
+
 
 
 
@@ -191,74 +265,6 @@ def main_menu_guardar_coleccion():
             sc.pausar()
 
 
-def main_menu_buscar():
-    while True:
-        sc.limpiar_pantalla()
-        print('===========================================')
-        print('        Buscar un Elemento')
-        print('===========================================')
-        print('¿Cómo deseas buscar?')
-        print('1. Buscar por Título')
-        print('2. Buscar por Autor/Director/Artista')
-        print('3. Buscar por Género')
-        print('4. Regresar al Menú Principal')
-        print('===========================================')
-
-        try:
-            op = int(input('\nSelecciona una opción (1-4): '))
-            if op == 1:
-                bs.buscar_por_titulo()
-                
-
-            elif op == 2:
-                bs.buscar_por_autor()
-
-            elif op == 3:
-                bs.buscar_por_genero()
-
-            elif op == 4:
-                print("\nRegresando al menú principal...")
-                break
-            else:
-                print('\nOpción no válida. Intenta de nuevo.')
-                sc.pausar()
-        except ValueError:
-            print("\nEntrada no válida. Por favor, introduce un número.")
-            sc.pausar()
 
 
 
-
-def main_menu_editar():
-    while True:
-        sc.limpiar_pantalla()
-        print('===========================================')
-        print('        Editar un Elemento')
-        print('===========================================')
-        print('¿Qué tipo de cambio deseas realizar?')
-        print('1. Editar Título')
-        print('2. Editar Autor/Director/Artista')
-        print('3. Editar Género')
-        print('4. Editar Valoración')
-        print('5. Regresar al Menú Principal')
-        print('===========================================')
-
-        try:
-            op = int(input('\nSelecciona una opción (1-5): '))
-            if op == 1:
-                
-            elif op == 2:
-                
-            elif op == 3:
-                
-            elif op == 4:
-                
-            elif op == 5:
-                print("\nRegresando al menú principal...")
-                break
-            else:
-                print('\nOpción no válida. Intenta de nuevo.')
-                sc.pausar()
-        except ValueError:
-            print('\nEntrada inválida. Por favor, introduce un número.')
-            sc.pausar()

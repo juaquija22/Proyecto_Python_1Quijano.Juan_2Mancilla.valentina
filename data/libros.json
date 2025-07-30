@@ -1,9 +1,9 @@
 {
     "libros": {
         "5339": {
-            "nombre": "principito",
-            "autor": "juan",
-            "genero": "fantasia",
+            "nombre": "",
+            "autor": "vale",
+            "genero": "chao",
             "calificacion": 10
         }
     }
