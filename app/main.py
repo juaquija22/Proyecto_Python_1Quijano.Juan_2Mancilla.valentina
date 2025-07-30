@@ -33,7 +33,7 @@ def main_menu():
         print('selecciona una opción (1-8):')
         try:
             op=int(input("\n elige una opcion :"))
-            if 1 <= op <= 6:
+            if 1 <= op <= 8:
                 return op
         except:
                 pass
@@ -48,21 +48,27 @@ if __name__ == "__main__":
                       mn.main_menu_ver_elementos()
                      
                 elif opcion == 3:
-                      pass
+                      mn.main_menu_buscar()
+                      
                        
                 elif opcion == 4:
-                      pass
+                      mn.main_menu_editar()
+                      
                        
                 elif opcion == 5:
-                      pass                 
-                      
-                       
+                      mn.main_menu_eliminar_elementos()
+                                 
+                                            
                 elif opcion == 6:
-                       pass
-                      
-                elif opcion == 0:
+                       mn.main_menu_elementos_categoria()
+                         
                        
+                      
+                elif opcion == 7:
+                      mn.main_menu_guardar_coleccion()
+
+                elif opcion == 8:
                        break
-                else:
-                       print ('\n Opcion no valida')
-                       sc.pausar()
+else:
+                print ('\n Opcion no valida')
+                sc.pausar()
