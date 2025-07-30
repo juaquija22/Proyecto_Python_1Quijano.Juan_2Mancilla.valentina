@@ -37,7 +37,7 @@ def listar_musica():
     for idms, info in datos["musica"].items():
         print(f"\nID: {idms}")
         print(f"Nombre: {info['nombre']}")
-        print(f"Artista: {info['artista']}")
+        print(f"Artista: {info['autor']}")
         print(f"Género: {info['genero']}")
         print(f"Calificación: {info['calificacion']}/10")
 
@@ -59,7 +59,7 @@ def listar_peliculas():
     for idmv, info in datos["peliculas"].items():
         print(f"\nID: {idmv}")
         print(f"Nombre: {info['nombre']}")
-        print(f"Director: {info['director']}")
+        print(f"Director: {info['autor']}")
         print(f"Género: {info['genero']}")
         print(f"Calificación: {info['calificacion']}/10")
     

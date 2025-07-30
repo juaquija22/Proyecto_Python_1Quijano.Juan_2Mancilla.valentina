@@ -3,7 +3,8 @@ import sys
 import utils.screencontrollers as sc
 import controllers.anadir as add
 import controllers.listar as ls
-
+import controllers.buscar as bs
+import controllers.editar as ed
 
 def main_menu_añadir():
     while True:
@@ -206,16 +207,14 @@ def main_menu_buscar():
         try:
             op = int(input('\nSelecciona una opción (1-4): '))
             if op == 1:
-                print("Buscando por título...")
-                input("Presiona Enter para continuar...")
+                bs.buscar_por_titulo()
+                
 
             elif op == 2:
-                print("Buscando por autor/director/artista...")
-                input("Presiona Enter para continuar...")
+                bs.buscar_por_autor()
 
             elif op == 3:
-                print("Buscando por género...")
-                input("Presiona Enter para continuar...")
+                bs.buscar_por_genero()
 
             elif op == 4:
                 print("\nRegresando al menú principal...")
@@ -247,13 +246,13 @@ def main_menu_editar():
         try:
             op = int(input('\nSelecciona una opción (1-5): '))
             if op == 1:
-                pass
+                
             elif op == 2:
-                pass
+                
             elif op == 3:
-                pass
+                
             elif op == 4:
-                pass
+                
             elif op == 5:
                 print("\nRegresando al menú principal...")
                 break

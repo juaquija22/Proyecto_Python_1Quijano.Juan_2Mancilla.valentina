@@ -62,7 +62,7 @@ def add_movie():
     movie_data = {
         idmv: {
             "nombre": title,
-            "director": director,
+            "autor": director,
             "genero": genre,
             "calificacion": rating,
         }
@@ -97,7 +97,7 @@ def add_music():
     music_data = {
         idms: {
             "nombre": title,
-            "artista": artist,
+            "autor": artist,
             "genero": genre,
             "calificacion": rating,
         }

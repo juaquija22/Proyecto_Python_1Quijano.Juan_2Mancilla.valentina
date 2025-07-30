@@ -1,10 +1,10 @@
 {
     "peliculas": {
-        "6058": {
-            "nombre": "fff",
-            "director": "fff",
-            "genero": "rrr",
-            "calificacion": 5
+        "4022": {
+            "nombre": "avengers",
+            "autor": "juan",
+            "genero": "super heroes",
+            "calificacion": 9
         }
     }
 }
