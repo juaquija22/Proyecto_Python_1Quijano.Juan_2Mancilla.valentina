@@ -1,0 +1,18 @@
+{
+    "Libros": {
+        "8768": {
+            "nombre": "",
+            "Autor": "",
+            "Genero": "",
+            "Calificacion": ""
+        }
+    },
+    "libro": {
+        "1828": {
+            "nombre": "d",
+            "autor": "d",
+            "genero": "d",
+            "calificacion": 3
+        }
+    }
+}
