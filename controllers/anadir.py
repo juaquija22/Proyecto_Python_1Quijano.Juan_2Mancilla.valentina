@@ -7,7 +7,7 @@ import utils.validatedata as vd
 from config import DB_PATH
 import random
 import os
-
+import controllers.menu as mn
             
 
 
@@ -35,7 +35,7 @@ def add_book():
         }
     }
 
-    if cf.updateJson(libro_data, ["libro"]):
+    if cf.updateJson(libro_data, ["libros"], filename="libros.json"):
         print("Libro agregado exitosamente.")
     else:
         print("No se pudo agregar el libro.")
@@ -48,12 +48,12 @@ def add_book():
 def add_movie():
     sc.limpiar_pantalla()
     idmv = random.randint(1023, 9876)
-    
+
     title = vd.validatetext('Nombre de la Película :')
     director = vd.validatetext('Director :')
     genre = vd.validatetext('Género :')
     rating = vd.validateInt('Calificación (1-10) :')
-    
+
     if not (1 <= rating <= 10):
         print('Número inválido. Debe estar entre 1 y 10.')
         sc.pausar()
@@ -68,12 +68,13 @@ def add_movie():
         }
     }
 
-    if cf.updateJson(movie_data, ["pelicula"]):
+    if cf.updateJson(movie_data, ["peliculas"], filename="peliculas.json"):
         print("Película agregada exitosamente.")
     else:
         print("No se pudo agregar la película.")
-    
+
     sc.pausar()
+
 
 
 
@@ -81,20 +82,20 @@ def add_movie():
 
 def add_music():
     sc.limpiar_pantalla()
-    idmsc = random.randint(1023, 9876)
-    
+    idms = random.randint(1023, 9876)
+
     title = vd.validatetext('Nombre de la Canción :')
-    artist = vd.validatetext('Artista :')
-    genre = vd.validatetext('Género :')
+    artist = vd.validatetext('Artista o Banda :')
+    genre = vd.validatetext('Género Musical :')
     rating = vd.validateInt('Calificación (1-10) :')
-    
+
     if not (1 <= rating <= 10):
         print('Número inválido. Debe estar entre 1 y 10.')
         sc.pausar()
         return
 
     music_data = {
-        idmsc: {
+        idms: {
             "nombre": title,
             "artista": artist,
             "genero": genre,
@@ -102,9 +103,10 @@ def add_music():
         }
     }
 
-    if cf.updateJson(music_data, ["musica"]):
+    if cf.updateJson(music_data, ["musica"], filename="musica.json"):
         print("Canción agregada exitosamente.")
     else:
         print("No se pudo agregar la canción.")
-    
+
     sc.pausar()
+

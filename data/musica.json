@@ -1,13 +1,10 @@
 {
-    "Musica":{
-        "8768":{
-            "nombre":"",
-            "Autor":"",
-            "Genero":"",
-            "Calificacion":""
-            
+    "musica": {
+        "1996": {
+            "nombre": "w",
+            "artista": "www",
+            "genero": "rrrrr",
+            "calificacion": 3
         }
-
     }
 }
-

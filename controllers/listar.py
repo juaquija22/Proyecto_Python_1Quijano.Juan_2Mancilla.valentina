@@ -3,15 +3,15 @@ import utils.screencontrollers as sc
 
 def listar_libros():
     sc.limpiar_pantalla()
-    datos = cf.readJson("libro.json")
+    datos = cf.readJson("libros.json")
 
-    if "libro" not in datos or not datos["libro"]:
+    if "libros" not in datos or not datos["libros"]:
         print("No hay libros registrados.")
         sc.pausar()
         return
 
     print("=== Lista de Libros Registrados ===")
-    for idbk, info in datos["libro"].items():
+    for idbk, info in datos["libros"].items():
         print(f"\nID: {idbk}")
         print(f"Nombre: {info['nombre']}")
         print(f"Autor: {info['autor']}")
@@ -22,9 +22,11 @@ def listar_libros():
 
 
 
+
+
 def listar_musica():
     sc.limpiar_pantalla()
-    datos = cf.readJson("musica.json") 
+    datos = cf.readJson("musica.json")
 
     if "musica" not in datos or not datos["musica"]:
         print("No hay canciones registradas.")
@@ -34,28 +36,29 @@ def listar_musica():
     print("=== Lista de Canciones Registradas ===")
     for idms, info in datos["musica"].items():
         print(f"\nID: {idms}")
-        print(f"Título: {info['titulo']}")
+        print(f"Nombre: {info['nombre']}")
         print(f"Artista: {info['artista']}")
         print(f"Género: {info['genero']}")
         print(f"Calificación: {info['calificacion']}/10")
-    
+
     sc.pausar()
+
 
 
 
 def listar_peliculas():
     sc.limpiar_pantalla()
-    datos = cf.readJson("pelicula.json")  
+    datos = cf.readJson("peliculas.json")
 
-    if "pelicula" not in datos or not datos["pelicula"]:
+    if "peliculas" not in datos or not datos["peliculas"]:
         print("No hay películas registradas.")
         sc.pausar()
         return
 
     print("=== Lista de Películas Registradas ===")
-    for idpl, info in datos["pelicula"].items():
-        print(f"\nID: {idpl}")
-        print(f"Título: {info['titulo']}")
+    for idmv, info in datos["peliculas"].items():
+        print(f"\nID: {idmv}")
+        print(f"Nombre: {info['nombre']}")
         print(f"Director: {info['director']}")
         print(f"Género: {info['genero']}")
         print(f"Calificación: {info['calificacion']}/10")
