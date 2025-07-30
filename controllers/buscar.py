@@ -3,16 +3,15 @@ from typing import List, Dict
 import utils.screencontrollers as sc
 from tabulate import tabulate
 
-
 def mostrar_resultados(resultados: List[Dict]):
     headers = ["Tipo", "Categoría", "ID", "Nombre", "Detalles"]
-    table = []
+    tabla = []
 
     for r in resultados:
         elemento = r["elemento"]
         nombre = elemento.get("nombre", "N/A")
         detalles = {k: v for k, v in elemento.items() if k != "nombre"}
-        table.append([
+        tabla.append([
             r["tipo"].capitalize(),
             r["categoria"].capitalize(),
             r["id"],
@@ -20,9 +19,8 @@ def mostrar_resultados(resultados: List[Dict]):
             str(detalles)
         ])
 
-    print(tabulate(table, headers=headers, tablefmt="grid"))
+    print(tabulate(tabla, headers=headers, tablefmt="grid"))
     sc.pausar()
-
 
 def buscar_por_titulo() -> List[Dict]:
     sc.limpiar_pantalla()
@@ -53,7 +51,6 @@ def buscar_por_titulo() -> List[Dict]:
         sc.pausar()
 
     return resultados
-
 
 def buscar_por_autor() -> List[Dict]:
     sc.limpiar_pantalla()
@@ -88,7 +85,6 @@ def buscar_por_autor() -> List[Dict]:
 
     return resultados
 
-
 def buscar_por_genero() -> List[Dict]:
     sc.limpiar_pantalla()
     valor = input("Ingresa el género: ")
@@ -118,6 +114,7 @@ def buscar_por_genero() -> List[Dict]:
         sc.pausar()
 
     return resultados
+
 
    
 

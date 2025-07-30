@@ -231,38 +231,6 @@ def main_menu_elementos_categoria():
 
 
 
-def main_menu_guardar_coleccion():
-    while True:
-        sc.limpiar_pantalla()
-        print('===========================================')
-        print('        Guardar y Cargar Colección')
-        print('===========================================')
-        print('¿Qué deseas hacer?')
-        print('1. Guardar la Colección Actual')
-        print('2. Cargar la Colección desde un Archivo')
-        print('3. Regresar al Menú Principal')
-        print('===========================================')
-
-        try:
-            opcion = int(input('\nSelecciona una opción (1-3): '))
-
-            if opcion == 1:
-                print("\nGuardando la colección actual...")
-               
-
-            elif opcion == 2:
-                print("\nCargando la colección desde archivo...")
-              
-
-            elif opcion == 3:
-                print("\nRegresando al menú principal...")
-                break
-            else:
-                print("\nOpción no válida. Por favor, elige un número del 1 al 3.")
-                sc.pausar()
-        except ValueError:
-            print("\nEntrada no válida. Por favor, introduce un número.")
-            sc.pausar()
 
 
 

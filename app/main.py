@@ -1,7 +1,7 @@
 """
 Autor: Juan Pablo Quijano y valentina mancilla
 Fecha: 28/07/2025
-Descripción: este proyecto consiste en una liga betplay donde se pueden hacer transferencias de jugadores crear jugadores crear equipos
+Descripción: Administrador de Colección de Libros/Películas/Música
 """
 
 import os
@@ -29,13 +29,12 @@ def main_menu():
         print('4. Editar un Elemento')
         print('5. Eliminar un Elemento')
         print('6. Ver Elementos por Categoría')
-        print('7. Guardar Colección')
-        print('8. Salir')
+        print('7. Salir')
         print('========================================')
 
         try:
             op = int(input("\nElige una opción (1-8): "))
-            if 1 <= op <= 8:
+            if 1 <= op <= 7:
                 return op
         except ValueError:
             pass  
@@ -61,6 +60,4 @@ if __name__ == "__main__":
         elif opcion == 6:
             mn.main_menu_elementos_categoria()
         elif opcion == 7:
-            mn.main_menu_guardar_coleccion()
-        elif opcion == 8:
             break
