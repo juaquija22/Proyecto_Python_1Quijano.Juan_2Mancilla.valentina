@@ -1,11 +1,9 @@
-import os
-import sys
 import utils.screencontrollers as sc
 import controllers.anadir as add
 import controllers.listar as ls
 import controllers.buscar as bs
 import controllers.editar as ed
-
+import controllers.eliminar as el
 def main_menu_añadir():
     while True:
         sc.limpiar_pantalla()
@@ -172,10 +170,10 @@ def main_menu_eliminar_elementos():
             opcion = int(input('\nSelecciona una opción (1-3): '))
             
             if opcion == 1:
-                pass
+                el.eliminar_por_titulo()
 
             elif opcion == 2:
-               pass
+               el.eliminar_por_id()
 
             elif opcion == 3:
                 print("\nRegresando al menú principal...")
