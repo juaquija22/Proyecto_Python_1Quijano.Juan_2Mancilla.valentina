@@ -236,7 +236,7 @@ data/
         "genero": "chao",
         "calificacion": 10
       },
-      ...
+      
     }
   }
   ```
@@ -252,7 +252,7 @@ data/
         "genero": "reguetton",
         "calificacion": 10
       },
-      ...
+      
     }
   }
   ```
