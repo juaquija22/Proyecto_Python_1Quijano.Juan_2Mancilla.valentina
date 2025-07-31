@@ -71,10 +71,13 @@ def main_menu_ver_elementos():
             elif opcion == 4:
                 print("\nRegresando al menú principal...")
                 break
+            else:
+                print("\nOpción inválida. Por favor selecciona un número del 1 al 4.")
+                sc.pausar()
 
         except ValueError:
             print('\nEntrada no válida. Por favor, ingresa un número.')
-            sc.pausar
+            sc.pausar()
 
 def main_menu_buscar():
     while True:
