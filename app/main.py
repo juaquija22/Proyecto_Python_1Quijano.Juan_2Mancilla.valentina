@@ -33,7 +33,7 @@ def main_menu():
         print('========================================')
 
         try:
-            op = int(input("\nElige una opción (1-8): "))
+            op = int(input("\nElige una opción (1-7): "))
             if 1 <= op <= 7:
                 return op
         except ValueError:

@@ -4,23 +4,28 @@ import utils.screencontrollers as sc
 from tabulate import tabulate
 
 def mostrar_resultados(resultados: List[Dict]):
-    headers = ["Tipo", "Categoría", "ID", "Nombre", "Detalles"]
+    headers = ["Tipo", "ID", "Nombre", "Autor", "Género", "Calificación"]
     tabla = []
 
     for r in resultados:
         elemento = r["elemento"]
         nombre = elemento.get("nombre", "N/A")
-        detalles = {k: v for k, v in elemento.items() if k != "nombre"}
+        autor = elemento.get("autor")  or "N/A"
+        genero = elemento.get("genero", "N/A")
+        calificacion = f"{elemento.get('calificacion', 'N/A')}/10"
+
         tabla.append([
             r["tipo"].capitalize(),
-            r["categoria"].capitalize(),
             r["id"],
             nombre,
-            str(detalles)
+            autor,
+            genero,
+            calificacion
         ])
 
     print(tabulate(tabla, headers=headers, tablefmt="grid"))
     sc.pausar()
+    
 
 def buscar_por_titulo() -> List[Dict]:
     sc.limpiar_pantalla()

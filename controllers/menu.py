@@ -4,6 +4,7 @@ import controllers.listar as ls
 import controllers.buscar as bs
 import controllers.editar as ed
 import controllers.eliminar as el
+import controllers.categoria as ca
 def main_menu_añadir():
     while True:
         sc.limpiar_pantalla()
@@ -202,8 +203,9 @@ def main_menu_elementos_categoria():
     while True:
         sc.limpiar_pantalla()
         print('===========================================')
-        print('        ¿Qué categoría deseas ver?')
+        print(      'Ver Elementos por Categoría'          )
         print('===========================================')
+        print('¿Qué categoría deseas ver? '        )
         print('1. Libros')
         print('2. Películas')
         print('3. Música')
@@ -214,17 +216,22 @@ def main_menu_elementos_categoria():
             opcion = int(input('\nSelecciona una opción (1-4): '))
 
             if opcion == 1:
-                print("\nMostrando la categoría: LIBROS")
+                ca.mostrar_categoria_libros()
+                
               
             elif opcion == 2:
-                print("\nMostrando la categoría: PELÍCULAS")
+                ca.mostrar_categoria_peliculas()
+               
               
             elif opcion == 3:
-                print("\nMostrando la categoría: MÚSICA")
+                ca.mostrar_categoria_musica()
+                
                 
             elif opcion == 4:
                 print("\nRegresando al menú principal...")
                 break
+            else:
+                print("\nOpción inválida. Por favor, ingresa un número del 1 al 4.")
         except ValueError:
             print("\nEntrada no válida. Por favor, ingresa un número del 1 al 4.")
 

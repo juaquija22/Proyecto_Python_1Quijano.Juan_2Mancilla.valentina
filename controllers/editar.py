@@ -1,5 +1,7 @@
 from utils.corefiles import readJson, updateJson
 import utils.screencontrollers as sc
+from tabulate import tabulate
+
 
 def editar_titulo_por_nombre():
     sc.limpiar_pantalla()
