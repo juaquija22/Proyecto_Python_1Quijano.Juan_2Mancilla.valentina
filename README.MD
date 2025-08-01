@@ -8,10 +8,8 @@ Esta carpeta contiene el archivo principal del proyecto: `main.py`. Aquí es don
 
 ## 🌟 Características Destacadas
 
-- Interfaz por consola sencilla y clara.
 - Menú principal interactivo para gestionar elementos.
 - Acceso organizado a las distintas funcionalidades del sistema.
-- Compatibilidad con sistemas Windows, Linux y macOS.
 
 ## 🎯 Objetivo
 
@@ -19,7 +17,7 @@ El objetivo principal de esta parte del proyecto es proporcionar una entrada cen
 
 ## 🛠 Tecnologías Utilizadas
 
-- **Python 3**
+
 - Módulos propios del proyecto:
   - `utils.screencontrollers` para limpiar pantalla y pausar.
   - `controllers.menu` para manejar las opciones del menú.
@@ -97,7 +95,7 @@ Crear un sistema completo de gestión de elementos multimedia que funcione desde
 
 ## 🧪 Tecnologías Utilizadas
 
-### 1. **Python 3**
+### 1. **Python **
 
 Lenguaje de programación principal. Toda la lógica del sistema, incluyendo menús, interacción con el usuario, validación de datos y operaciones de archivo, está escrita en Python puro.
 
@@ -193,18 +191,18 @@ Esta carpeta contiene todos los módulos funcionales del proyecto, **divididos p
 
 ## 📖 Descripción del Proyecto
 
-Este proyecto consiste en una estructura de datos en formato JSON que almacena información clasificada sobre libros, música y películas. Cada categoría contiene elementos con atributos como nombre, autor, género y calificación. El objetivo es proporcionar una base de datos simple y fácilmente accesible para aplicaciones educativas, de entretenimiento o de gestión multimedia.
+Este proyecto consiste en una estructura de datos en formato JSON que almacena información clasificada sobre libros, música y películas. Cada categoría contiene elementos con  propiedades como nombre, autor, género y calificación. El objetivo es proporcionar una base de datos simple y fácilmente accesible para aplicaciones educativas, de entretenimiento o de gestión multimedia.
 
 ## 🌟 Características Destacadas
 
 - Clasificación de medios en tres categorías: libros, música y películas.
 - Estructura organizada y fácil de leer en formato JSON.
 - Calificación numérica para evaluar cada elemento.
-- Ideal para usar en aplicaciones de recomendación o catálogos digitales.
+
 
 ## 🎯 Objetivo
 
-El objetivo principal de este proyecto es ofrecer una estructura de datos sencilla para gestionar información multimedia, que pueda ser reutilizada en proyectos de desarrollo web, análisis de datos, machine learning o aprendizaje de estructuras JSON.
+El objetivo principal de este proyecto es ofrecer una estructura de datos sencilla para gestionar información multimedia, que pueda ser reutilizada en proyectos de estructuras JSON.
 
 ## 🛠 Tecnologías Utilizadas
 
@@ -299,7 +297,7 @@ El objetivo de esta carpeta es reunir herramientas útiles que pueden ser llamad
 
 ## 🛠 Tecnologías Utilizadas
 
-- **Python 3**
+- **Python **
 - Módulos estándar:
   - `json`
   - `os`
@@ -319,8 +317,7 @@ utils/
 
 ### 📄 Descripción de los Archivos
 
-- **`corefiles.py`**
-   Funciones para trabajar con archivos JSON:
+
   - `readJson()` – Lee y carga el contenido de un archivo JSON.
   - `writeJson()` – Guarda datos en formato JSON.
   - `updateJson()` – Permite modificar datos existentes o insertar nuevos.
@@ -363,7 +360,7 @@ El objetivo de este archivo es actuar como punto central para almacenar rutas o 
 
 ## 🛠 Tecnologías Utilizadas
 
-- **Python 3**
+- **Python*
 - Módulo estándar (sin dependencias externas)
 
 ## 🗂 Estructura del Archivo
