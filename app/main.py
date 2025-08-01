@@ -11,9 +11,6 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import utils.screencontrollers as sc
-import controllers.anadir as add
-import controllers.listar as ls
-import controllers.editar as ed
 import controllers.menu as mn
 
 
