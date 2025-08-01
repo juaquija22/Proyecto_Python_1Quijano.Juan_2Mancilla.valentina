@@ -16,7 +16,7 @@ Esta carpeta contiene el archivo principal del proyecto: `main.py`. Aquí es don
 El objetivo principal de esta parte del proyecto es proporcionar una entrada central desde donde se puede controlar todo el sistema. A través del menú, el usuario puede interactuar con los datos de manera simple y eficiente.
 
 ## 🛠 Tecnologías Utilizadas
-
+**Python 3**
 
 - Módulos propios del proyecto:
   - `utils.screencontrollers` para limpiar pantalla y pausar.
@@ -298,6 +298,7 @@ El objetivo de esta carpeta es reunir herramientas útiles que pueden ser llamad
 ## 🛠 Tecnologías Utilizadas
 
 - **Python **
+
 - Módulos estándar:
   - `json`
   - `os`
@@ -361,6 +362,7 @@ El objetivo de este archivo es actuar como punto central para almacenar rutas o 
 ## 🛠 Tecnologías Utilizadas
 
 - **Python*
+
 - Módulo estándar (sin dependencias externas)
 
 ## 🗂 Estructura del Archivo
