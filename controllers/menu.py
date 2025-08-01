@@ -32,6 +32,9 @@ def main_menu_añadir():
             elif op == 4:
                 print("\nRegresando al menú principal...")
                 break
+            else:
+                print("\nOpción inválida. Por favor selecciona un número del 1 al 4.")
+                sc.pausar()
         except ValueError:
             print('\nEntrada inválida. Por favor, introduce un número.')
             sc.pausar()
