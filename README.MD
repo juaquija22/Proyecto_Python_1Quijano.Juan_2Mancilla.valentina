@@ -387,7 +387,7 @@ DB_PATH = "data/"
 
 ## ✍️ Autores
 
- Valentina Mancilla Casanova y Juan pablo Quijano Martinez 
+juan pablo quijano martinez y valentina mancilla casanova 
 
 
 
